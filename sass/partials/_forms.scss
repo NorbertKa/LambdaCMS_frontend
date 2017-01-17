@@ -1,0 +1,65 @@
+// Forms
+form {
+    h5 {
+        margin: 0;
+    }
+}
+
+input {
+    box-sizing: border-box;
+    display: inline-block;
+    width: calc(50% - 2rem);
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid $mainGrey;
+    border-radius: 2px;
+
+    &.full {
+        width: calc(100% - 1rem);
+    }
+}
+
+input[type='button'], input[type='submit'] {
+    background: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    border-color: $mainBlue;
+    transition: border-color .3s, color .3s;
+
+    &:hover {
+        border-color: $mainOrange;
+        color: $mainOrange;
+    }
+}
+
+textarea {
+    box-sizing: border-box;
+    display: inline-block;
+    width: calc(50% - 2rem);
+    min-height: 150px;
+    max-height: 300px;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    border: 1px solid $mainGrey;
+    border-radius: 2px;
+
+    &.full {
+        width: calc(100% - 1rem);
+    }
+}
+
+input, textarea {
+    color: $mainGrey;
+}
+
+input:not([type='button']), input:not([type='submit']), textarea {
+    &:focus {
+        border-color: $mainBlue;
+    }
+}
