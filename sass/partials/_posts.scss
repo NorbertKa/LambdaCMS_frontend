@@ -1,10 +1,11 @@
 // Posts
 .post {
+    position: relative;
     box-sizing: border-box;
     display: block;
     width: 100%;
     margin-top: 1rem;
-    border: 1px solid #ccc; //4test
+    padding-top: 1.5rem;
 
     &:first-child {
         margin: 0;
@@ -14,7 +15,95 @@
 }
 
 .post-vote {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
     box-sizing: border-box;
     display: block;
-    width: 10%;
+    float: left;
+    width: 5%;
+    text-align: center;
+
+    .vote-btn {
+        display: block;
+        width: 100%;
+        color: $mainGrey;
+        font-size: 2.2rem;
+        transition: color .3s;
+
+        &.vote-up {
+            &:hover {
+                color: $mainOrange;
+            }
+        }
+
+        &.vote-down {
+            &:hover {
+                color: $mainBlue;
+            }
+        }
+    }
+
+    .vote-count {
+        display: block;
+        width: 100%;
+        color: $mainGrey;
+        font-size: 1.8rem;
+        font-weight: 800;
+    }
+}
+
+.post-img {
+    display: block;
+    float: left;
+    max-width: 150px;
+    max-height: 150px;
+    overflow: hidden;
+    margin-left: 5%;
+}
+
+.post-title {
+    box-sizing: border-box;
+    display: block;
+    width: auto;
+    max-width: calc(95% - 150px);
+    float: left;
+    margin-left: 1rem;
+
+    h5 {
+        margin: 0;
+        line-height: 1.2;
+
+        a {
+            text-decoration: none;
+            color: $mainGrey;
+        }
+    }
+}
+
+.post-info {
+    box-sizing: border-box;
+    display: block;
+    width: auto;
+    max-width: calc(95% - 150px);
+    float: left;
+    margin-left: 1rem;
+
+    span {
+        display: block;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 16px;
+        color: darken($mainGrey, 10);
+        transition: color .3s;
+
+        &:hover {
+            color: $mainOrange;
+        }
+    }
 }
