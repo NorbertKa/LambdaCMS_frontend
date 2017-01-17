@@ -1,0 +1,93 @@
+// Comments
+.comment {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    border: 1px solid #ccc;
+
+    &:first-child {
+        margin: 0;
+    }
+
+    @include clearfix;
+}
+
+.comment-vote {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 5%;
+    text-align: center;
+
+    .vote-btn {
+        display: block;
+        width: 100%;
+        color: $mainGrey;
+        font-size: 1.4rem;
+        transition: color .3s;
+
+        &.vote-up {
+            &:hover {
+                color: $mainOrange;
+            }
+        }
+
+        &.vote-down {
+            &:hover {
+                color: $mainBlue;
+            }
+        }
+    }
+
+    .vote-count {
+        display: block;
+        width: 100%;
+        color: $mainGrey;
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+}
+
+.comment-info {
+    box-sizing: border-box;
+    display: block;
+    width: auto;
+    max-width: 95%;
+    float: left;
+    margin-left: 5%;
+
+    span {
+        display: inline-block;
+        font-size: 1.2rem;
+        margin-left: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.4rem;
+        color: darken($mainGrey, 10);
+        transition: color .3s;
+
+        &:hover {
+            color: $mainOrange;
+        }
+    }
+}
+
+.comment-content {
+    box-sizing: border-box;
+    display: block;
+    width: auto;
+    max-width: 95%;
+    float: left;
+    margin-top: 0.8rem;
+    margin-left: 5%;
+    font-size: 1.6rem;
+}
