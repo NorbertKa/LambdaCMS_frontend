@@ -45,6 +45,28 @@
     }
 }
 
+.navbar-text {
+    opacity: 0;
+    animation-name: disolve;
+    animation-duration: 3s;
+    animation-direction: reverse;
+
+    @keyframes disolve {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        80% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+}
+
 .navigation-fix {
     display: block;
     width: 100%;
