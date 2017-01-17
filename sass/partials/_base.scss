@@ -4,6 +4,7 @@
 $mainGrey: #60646D;
 $mainOrange: #F29B34;
 $mainBlue: #3D8EB9;
+$mainNav: #3E4651;
 
 // Base styles
 html {
@@ -70,7 +71,7 @@ p {
 
 .sidebar {
     position: fixed;
-    top: 100px;
+    top: 90px;
     right: 0;
     box-sizing: border-box;
     max-width: calc(20% - 3rem);
@@ -78,5 +79,5 @@ p {
     margin: 0 2rem 0 1rem;
     padding: 10px;
     @include clearfix;
-    @include testB;
+
 }
