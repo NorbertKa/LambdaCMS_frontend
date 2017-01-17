@@ -8,9 +8,10 @@
     <button @click="getBoards()">GET BOARDS</button>
     <div id="boards">
       <h3 v-if="boards.length == 0">No Boards found</h3>
-      <li v-for="board in boards">
-        <ul>{{board.title}}</ul>
-      </li>
+      <div v-for="board in boards">
+        <h1>{{board.title}}</h1>
+        <small>{{board.miniDescription}}</small>
+      </div>
     </div>
   </div>
 </template>
