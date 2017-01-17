@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+// Variables
+
+// Base styles
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+// Misc
+.container {
+    box-sizing: border-box;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+// Mixins
