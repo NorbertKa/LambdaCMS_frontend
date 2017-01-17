@@ -3,6 +3,17 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4)
+            callback(xmlHttp.responseText, xmlHttp.status);
+    }
+    xmlHttp.open("GET", theUrl, true);
+    xmlHttp.send(null);
+}
+
 export default new Vuex.Store({
     state: {
         token: "",
@@ -63,9 +74,19 @@ export default new Vuex.Store({
     actions: {
         logIn({commit}, token) {
             commit('SET_TOKEN', token)
+        },
+        getBoards({commit}) {
+            httpGetAsync("http://127.0.0.1:1337/boards", function(resp, statusCode){
+                if(statusCode == 200){
+                    var data = JSON.parse(resp)
+                    console.log(data.Boards)
+                    commit('SET_BOARDS', data.Boards)
+                }
+            })
         }
     },
     getters: {
-        token: state => state.token
+        token: state => state.token,
+        boards: state => state.boards,
     }
 })
