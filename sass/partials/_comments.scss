@@ -13,12 +13,22 @@
     }
 
     @include clearfix;
+
+    .sub-comments {
+        box-sizing: border-box;
+        display: block;
+        width: 95%;
+        margin-top: 1rem;
+        margin-left: 5%;
+        border-left: 1px solid #ccc;
+
+        .comment {
+            border: 0;
+        }
+    }
 }
 
 .comment-vote {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     box-sizing: border-box;
     display: block;
     float: left;
@@ -60,7 +70,6 @@
     width: auto;
     max-width: 95%;
     float: left;
-    margin-left: 5%;
 
     span {
         display: inline-block;
@@ -88,6 +97,10 @@
     max-width: 95%;
     float: left;
     margin-top: 0.8rem;
-    margin-left: 5%;
     font-size: 1.6rem;
+}
+
+.clear-fix {
+    display: block;
+    clear: both;
 }

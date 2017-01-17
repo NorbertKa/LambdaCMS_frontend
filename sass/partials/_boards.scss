@@ -1,0 +1,41 @@
+// Boards
+.board {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 0;
+
+    &:first-child {
+        margin: 0;
+    }
+
+    @include clearfix;
+
+    span {
+        font-size: 2.0rem;
+    }
+
+    a {
+        font-size: 1.2rem;
+        margin-left: 1rem;
+        color: $mainOrange;
+        font-weight: 800;
+        text-decoration: none;
+        transition: color .3s;
+
+        &:hover {
+            color: $mainBlue;
+        }
+    }
+
+    .board-count {
+        display: inline-block;
+        font-size: 1.2rem;
+        margin-left: 1rem;
+    }
+
+    .board-info {
+        font-size: 1.5rem;
+    }
+}
