@@ -5,10 +5,7 @@
 
         <ul class="main-nav">
             <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/sad">kek</router-link></li>
-            <li><router-link to="/sad">kek</router-link></li>
-            <li><router-link to="/sad">kek</router-link></li>
-            <li><router-link to="/sad">kek</router-link></li>
+            <li><router-link to="/sad">Image Upload</router-link></li>
         </ul>
 
 
@@ -37,9 +34,9 @@
         <br>
         <form action="?" method="post">
             <h5>Submit post</h5>
-            <input v-model="boardName" type="text" placeholder="Title" class="full">
-            <textarea v-model="boardFullDescription" class="full"></textarea>
-            <input @click="submitBoard()" value="Submit" class="btn-default full submit">
+            <input v-model="postTitle" type="text" placeholder="Title" class="full">
+            <textarea v-model="postBody" class="full"></textarea>
+            <input @click="submitPost()" value="Submit" class="btn-default full submit">
         </form>
     </div>
   </div>
@@ -52,7 +49,9 @@ export default {
     return {
         boardName : "",
         boardMiniDescription : "",
-        boardFullDescription : ""
+        boardFullDescription : "",
+        postTitle : "",
+        postBody : ""
     }
   },
   methods: {
@@ -75,6 +74,18 @@ export default {
       },
       submitPost(post) {
           let token = this.$store.getters.token
+          let boardId = this.$store.getters.selectedBoard
+          console.log(boardId)
+          this.$http.post('http://127.0.0.1:1337/post', {
+                title: this.postTitle,
+                body: this.postBody,
+                boardId: boardId
+            },{emulateJSON: true, headers: {token: token}}).then((response) => {
+                console.log(response)
+                response.json().then(data => {
+                    console.log(data)
+                })
+            })
       }
   },
   computed: {

@@ -10,6 +10,8 @@ export default new Vuex.Store({
         username: "",
         password: "",
         token: "",
+        selectedBoard: 0,
+        selectedPost: 0,
         myUser: {},
         users: [],
         boards: [],
@@ -21,8 +23,14 @@ export default new Vuex.Store({
         comment: {}
     },
     mutations: {
+        SET_SELECTED_POST(state, id){
+            state.selectedPost = id
+        },
         SET_ALERT(state, alert) {
             state.alert = alert
+        },
+        SET_SELECTED_BOARD(state, id){
+            state.selectedBoard = id
         },
         SET_LOGIN_ALERT(state, alert){
             state.loginAlert = alert
@@ -83,6 +91,13 @@ export default new Vuex.Store({
         }
     },
     actions: {
+        setSelectedPost({commit}, id){
+            commit('SET_SELECTED_POST', id)
+        },
+        setSelectedBoard({commit}, id){
+            console.log("SETTING BOARD: ", id)
+            commit('SET_SELECTED_BOARD', id)
+        },
         setUsername({commit}, username) {
             commit('SET_USERNAME', username)
         },
@@ -216,6 +231,8 @@ export default new Vuex.Store({
         password: state => state.password,
         alert: state => state.alert,
         loginAlert: state => state.loginAlert,
-        comments: state => state.comments
+        comments: state => state.comments,
+        selectedBoard: state => state.selectedBoard,
+        selectedPost: state => state.selectedPost
     }
 })

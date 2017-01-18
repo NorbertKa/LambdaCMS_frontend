@@ -20,6 +20,11 @@
             </div>
         </div>
       </div>
+      <form action="?" method="post">
+            <h5>Comment</h5>
+            <textarea v-model="commentBody" class="full"></textarea>
+            <input @click="comment()" value="Comment" class="btn-default full submit">
+        </form>
   </div>
 </template>
 
@@ -27,9 +32,25 @@
 export default {
   name: 'app',
   data () {
-    return {}
+    return {
+        commentBody: ""
+    }
   },
   methods: {
+    comment(){
+        let token = this.$store.getters.token
+        let postId = this.$store.getters.selectedPost
+        this.$http.post('http://127.0.0.1:1337/comment', {
+            body: this.postBody,
+            postId: postId,
+            commentId: 0
+        },{emulateJSON: true, headers: {token: token}}).then((response) => {
+            console.log(response)
+            response.json().then(data => {
+                console.log(data)
+            })
+        })
+    },
     upvote(e){
       console.log(e)
       let token = this.$store.getters.token

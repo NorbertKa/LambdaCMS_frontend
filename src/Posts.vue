@@ -33,9 +33,11 @@ export default {
   },
   methods: {
     toPost(e){
+        this.$store.dispatch('setSelectedPost', e.id)
         this.$router.push('/post/' + e.id)
     },
     changeBoard(e){
+        this.$store.dispatch('setSelectedBoard', e.board.id)
         this.$store.dispatch('getPostsFromBoard', e.board.id)
     },
     getPosts(){
