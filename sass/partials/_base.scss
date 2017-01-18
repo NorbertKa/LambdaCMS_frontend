@@ -62,7 +62,7 @@ p {
     box-sizing: border-box;
     max-width: calc(80% - 3rem);
     width: calc(80% - 3rem);
-    margin: 0 1rem 0 2rem;
+    margin: 0 1rem 2rem 2rem;
     padding: 10px;
     float: left;
     @include clearfix;
@@ -71,7 +71,7 @@ p {
 
 .sidebar {
     position: fixed;
-    top: 90px;
+    top: 75px;
     right: 0;
     box-sizing: border-box;
     max-width: calc(20% - 3rem);

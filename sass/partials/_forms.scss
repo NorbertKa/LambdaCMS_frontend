@@ -1,7 +1,7 @@
 // Forms
 form {
     h5 {
-        margin: 0;
+        margin: 0 0 0 0.5rem;
     }
 }
 
@@ -21,17 +21,20 @@ input {
     }
 }
 
-input[type='button'], input[type='submit'] {
+.btn-default {
     background: none;
+    font-size: 1.6rem;
+    padding: 0.6rem 2.2rem;
     cursor: pointer;
     text-transform: capitalize;
     letter-spacing: 1px;
-    border-color: $mainBlue;
-    transition: border-color .3s, color .3s;
+    color: $mainOrange;
+    border-color: $mainOrange;
+    transition: background-color .3s, color .3s;
 
     &:hover {
-        border-color: $mainOrange;
-        color: $mainOrange;
+        background-color: $mainOrange;
+        color: #fff;
     }
 }
 
@@ -60,6 +63,6 @@ input, textarea {
 
 input:not([type='button']), input:not([type='submit']), textarea {
     &:focus {
-        border-color: $mainBlue;
+        border-color: $mainOrange;
     }
 }
