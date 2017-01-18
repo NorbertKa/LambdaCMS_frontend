@@ -65,6 +65,7 @@ p {
     margin: 0 1rem 2rem 2rem;
     padding: 10px;
     float: left;
+    border-radius: 2px;
     @include clearfix;
     @include testB;
 }
