@@ -56,10 +56,23 @@
 .post-img {
     display: block;
     float: left;
-    max-width: 150px;
-    height: 100%;
+    width: 140px;
+    height: 140px;
     overflow: hidden;
     margin-left: calc(5% + 1rem);
+    
+    .post-img-center {
+        display: inline-block; 
+        position:relative; 
+        right: -50%;
+        margin-top: -50%;
+
+        img {
+            position: relative;
+            left: -50%;
+            margin-top: 20%;
+        }
+    }   
 }
 
 .post-title {
